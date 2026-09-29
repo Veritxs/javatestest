@@ -1,15 +1,15 @@
 public abstract class AlasKaki extends Produk{
-  private int ukuran;
+  private String merk;
 
-  public AlasKaki(String kode, String nama, String merek, float harga, int stok, int ukuran) {
-    super(kode, nama, merek, harga, stok);
-    this.ukuran = ukuran;
+  public AlasKaki(String kode, String nama, int ukuran, float harga, int stok, String merk) {
+    super(kode, nama, ukuran, harga, stok);
+    this.merk = merk;
   }
 
-  public void setUkuran(int ukuran) {
-    this.ukuran = ukuran;
+  public void setMerk(String merk) {
+    this.merk = merk;
   }
-  public int getUkuran() {
-    return ukuran;
+  public String getMerk() {
+    return merk;
   }
 }
