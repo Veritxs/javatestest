@@ -1,15 +1,42 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
   public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
     System.out.println("Learning Inheritance and Polymorphism");
 
-    //Object dari masing-masing child class
+    //Input data yang disediakan oleh Seller
+    System.out.println("\n=== INPUT DATA SELLER ===");
+    System.out.print("Nama penjual  : ");
+    String namaPenjual = input.nextLine();
+    System.out.print("Nama toko     : ");
+    String namaToko = input.nextLine();
+    System.out.print("Alamat toko   : ");
+    String alamatToko = input.nextLine();
+
+    //Input data yang disediakan oleh Buyer
+    System.out.println("\n=== INPUT DATA BUYER ===");
+    System.out.print("Nama pembeli  : ");
+    String namaPembeli = input.nextLine();
+    System.out.print("No. handphone : ");
+    String noHpPembeli = input.nextLine();
+    System.out.print("Alamat kirim  : ");
+    String alamatKirim = input.nextLine();
+    System.out.print("Metode bayar  : ");
+    String metodePembayaran = input.nextLine();
+
+    //Object Seller dan Buyer dari hasil input
+    Seller seller1 = new Seller(namaPenjual, namaToko, alamatToko);
+    Buyer buyer1 = new Buyer(namaPembeli, noHpPembeli, alamatKirim);
+
+    //Data produk dari Seller
     KaosKaki produk1 = new KaosKaki("KK01", "Ankle Sock", "Uniqlo", 45000f, 10, "Polos");
     Sandal produk2 = new Sandal("SD01", "Slide", "Adidas", 350000f, 5, 42, "Sandal Jepit");
     Sepatu produk3 = new Sepatu("SP01", "Air Max", "Nike", 950000f, 3, 43, "Running");
 
-    System.out.println("Produk 1: " + produk1.getNama() +
+    System.out.println("\nProduk 1: " + produk1.getNama() +
                        ", Motif = " + produk1.getMotif());
     System.out.println("Produk 2: " + produk2.getNama() +
                        ", Ukuran = " + produk2.getUkuran() +
@@ -49,17 +76,12 @@ public class App {
       }
     }
 
-    //Object Seller dan Buyer
-    Seller seller1 = new Seller("toko@mail.com", "Andi", "08123456789", "andi", "andi123",
-                                "Toko Kaki Sehat", "Jakarta Barat", 4.8f);
-    Buyer buyer1 = new Buyer("budi@mail.com", "Budi", "08987654321", "budi", "budi123",
-                             "Jl. Letjen S. Parman No. 1", 1500000f);
-
     seller1.login();
     buyer1.login();
 
-    //Object Penjualan
-    Penjualan jual1 = new Penjualan("TRX001", "29-09-2026", seller1, buyer1, "Transfer Bank");
+    //Nomor pesanan dan tanggal dibuat oleh sistem
+    Penjualan jual1 = new Penjualan("TRX001", "29-09-2026", seller1, buyer1,
+                                     metodePembayaran);
     jual1.tambahProduk(produk1);
     jual1.tambahProduk(produk2);
     jual1.tambahProduk(produk3);
@@ -67,5 +89,6 @@ public class App {
 
     buyer1.logout();
     seller1.logout();
+    input.close();
   }
 }
