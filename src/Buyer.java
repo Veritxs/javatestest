@@ -1,23 +1,23 @@
 public class Buyer extends Person {
-  private String alamatKirim;
+  private String alamatPribadi;
 
   //Constructor
-  public Buyer(String email, String nama, String noHp, String username, String password, String alamatKirim) {
+  public Buyer(String email, String nama, String noHp, String username, String password, String alamatPribadi) {
     super(email, nama, noHp, username, password);
-    this.alamatKirim = alamatKirim;
+    this.alamatPribadi = alamatPribadi;
   }
 
   //Constructor sederhana untuk data struk
-  public Buyer(String nama, String noHp, String alamatKirim) {
+  public Buyer(String nama, String noHp, String alamatPribadi) {
     super("", nama, noHp, "", "");
-    this.alamatKirim = alamatKirim;
+    this.alamatPribadi = alamatPribadi;
   }
 
   //setter and getter
-  public void setAlamatKirim(String alamatKirim) {
-    this.alamatKirim = alamatKirim;
+  public void setAlamatPribadi(String alamatPribadi) {
+    this.alamatPribadi = alamatPribadi;
   }
-  public String getAlamatKirim() {
-    return alamatKirim;
+  public String getAlamatPribadi() {
+    return alamatPribadi;
   }
 }

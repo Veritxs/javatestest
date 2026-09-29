@@ -35,14 +35,16 @@ public class App {
         System.out.print("Nama produk  : ");
         String nama = input.nextLine();
         System.out.print("Ukuran       : ");
-        int ukuran = Integer.parseInt(input.nextLine());
+        String ukuran = input.nextLine();
+        System.out.print("Warna        : ");
+        String warna = input.nextLine();
         System.out.print("Harga        : ");
         float harga = Float.parseFloat(input.nextLine());
         System.out.print("Stok         : ");
         int stok = Integer.parseInt(input.nextLine());
         System.out.print("Motif        : ");
         String motif = input.nextLine();
-        KaosKaki produk = new KaosKaki(kode, nama, ukuran, harga, stok, motif);
+        KaosKaki produk = new KaosKaki(kode, nama, ukuran, warna, harga, stok, motif);
         produkList.add(produk);
         System.out.println(nama + " berhasil dimasukkan.");
       } else if (pilihanSeller == 2) {
@@ -58,10 +60,12 @@ public class App {
         System.out.print("Stok         : ");
         int stok = Integer.parseInt(input.nextLine());
         System.out.print("Ukuran       : ");
-        int ukuran = Integer.parseInt(input.nextLine());
+        String ukuran = input.nextLine();
+        System.out.print("Warna        : ");
+        String warna = input.nextLine();
         System.out.print("Jenis sandal : ");
         String jenisSandal = input.nextLine();
-        Sandal produk = new Sandal(kode, nama, ukuran, harga, stok, merk, jenisSandal);
+        Sandal produk = new Sandal(kode, nama, ukuran, warna, harga, stok, merk, jenisSandal);
         produkList.add(produk);
         System.out.println(nama + " berhasil dimasukkan.");
       } else if (pilihanSeller == 3) {
@@ -77,10 +81,12 @@ public class App {
         System.out.print("Stok         : ");
         int stok = Integer.parseInt(input.nextLine());
         System.out.print("Ukuran       : ");
-        int ukuran = Integer.parseInt(input.nextLine());
+        String ukuran = input.nextLine();
+        System.out.print("Warna        : ");
+        String warna = input.nextLine();
         System.out.print("Jenis sepatu : ");
         String jenisSepatu = input.nextLine();
-        Sepatu produk = new Sepatu(kode, nama, ukuran, harga, stok, merk, jenisSepatu);
+        Sepatu produk = new Sepatu(kode, nama, ukuran, warna, harga, stok, merk, jenisSepatu);
         produkList.add(produk);
         System.out.println(nama + " berhasil dimasukkan.");
       } else if (pilihanSeller != 0) {
@@ -100,14 +106,14 @@ public class App {
     String namaPembeli = input.nextLine();
     System.out.print("No. handphone : ");
     String noHpPembeli = input.nextLine();
-    System.out.print("Alamat kirim  : ");
-    String alamatKirim = input.nextLine();
-    System.out.print("Metode bayar  : ");
-    String metodePembayaran = input.nextLine();
-    Buyer buyer1 = new Buyer(namaPembeli, noHpPembeli, alamatKirim);
+    System.out.print("Alamat pribadi: ");
+    String alamatPribadi = input.nextLine();
+    System.out.print("Metode kirim  : ");
+    String metodePengiriman = input.nextLine();
+    Buyer buyer1 = new Buyer(namaPembeli, noHpPembeli, alamatPribadi);
 
-    //Nomor pesanan dan tanggal dibuat oleh sistem
-    Penjualan jual1 = new Penjualan("TRX001", "29-09-2026", seller1, buyer1, metodePembayaran);
+    //Nomor pesanan dan waktu dibuat oleh sistem
+    Penjualan jual1 = new Penjualan("TRX001", "29-09-2026", seller1, buyer1, metodePengiriman);
 
     //Menu Buyer untuk memilih produk dan jumlah
     int pilihanBuyer = -1;
