@@ -35,7 +35,7 @@ public class App {
         System.out.print("Nama produk  : ");
         String nama = input.nextLine();
         System.out.print("Ukuran       : ");
-        int ukuran = Integer.parseInt(input.nextLine());
+        String ukuran = input.nextLine();
         System.out.print("Harga        : ");
         float harga = Float.parseFloat(input.nextLine());
         System.out.print("Stok         : ");
@@ -58,7 +58,7 @@ public class App {
         System.out.print("Stok         : ");
         int stok = Integer.parseInt(input.nextLine());
         System.out.print("Ukuran       : ");
-        int ukuran = Integer.parseInt(input.nextLine());
+        String ukuran = input.nextLine();
         System.out.print("Jenis sandal : ");
         String jenisSandal = input.nextLine();
         Sandal produk = new Sandal(kode, nama, ukuran, harga, stok, merk, jenisSandal);
@@ -77,7 +77,7 @@ public class App {
         System.out.print("Stok         : ");
         int stok = Integer.parseInt(input.nextLine());
         System.out.print("Ukuran       : ");
-        int ukuran = Integer.parseInt(input.nextLine());
+        String ukuran = input.nextLine();
         System.out.print("Jenis sepatu : ");
         String jenisSepatu = input.nextLine();
         Sepatu produk = new Sepatu(kode, nama, ukuran, harga, stok, merk, jenisSepatu);

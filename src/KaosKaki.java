@@ -1,7 +1,7 @@
 public class KaosKaki extends Produk{
   private String motif;
 
-  public KaosKaki(String kode, String nama, int ukuran, float harga, int stok, String motif) {
+  public KaosKaki(String kode, String nama, String ukuran, float harga, int stok, String motif) {
     super(kode, nama, ukuran, harga, stok);
     this.motif = motif;
   }

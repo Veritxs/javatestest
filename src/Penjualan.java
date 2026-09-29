@@ -105,55 +105,35 @@ public class Penjualan implements Cetak{
     hitungTotalHarga();
     int totalKuantitas = 0;
 
-    for (int i = 0; i < listKuantitas.size(); i++) {
-      totalKuantitas = totalKuantitas + listKuantitas.get(i);
-    }
-
-    System.out.println("\n==============================================================================");
-    System.out.println("                               S H O P E E");
-    System.out.println("                              NOTA PESANAN");
-    System.out.println("==============================================================================");
-
-    System.out.println("DATA PEMBELI DAN PENJUAL");
-    System.out.println("Nama Pembeli        : " + buyer.getNama());
-    System.out.println("No. Handphone       : " + buyer.getNoHp());
-    System.out.println("Alamat Pembeli      : " + buyer.getAlamatKirim());
-    System.out.println("Nama Penjual        : " + seller.getNama());
-    System.out.println("Nama Toko           : " + seller.getNamaToko());
-    System.out.println("Alamat Toko         : " + seller.getAlamatToko());
-
-    System.out.println("------------------------------------------------------------------------------");
-    System.out.println("INFORMASI PESANAN");
-    System.out.println("No. Pesanan         : " + idPenjualan);
-    System.out.println("Tanggal Transaksi   : " + tglPenjualan);
-    System.out.println("Metode Pembayaran   : " + metodePembayaran);
-
-    System.out.println("------------------------------------------------------------------------------");
-    System.out.println("RINCIAN PESANAN");
-    System.out.printf("%-4s %-22s %-13s %12s %5s %12s%n",
-                      "No", "Produk", "Ukuran", "Harga", "Qty", "Subtotal");
-    System.out.println("------------------------------------------------------------------------------");
+    System.out.println("\n========================================");
+    System.out.println("             STRUK SHOPEE");
+    System.out.println("========================================");
+    System.out.println("No. Pesanan : " + idPenjualan);
+    System.out.println("Tanggal     : " + tglPenjualan);
+    System.out.println("Pembeli     : " + buyer.getNama());
+    System.out.println("No. HP      : " + buyer.getNoHp());
+    System.out.println("Alamat      : " + buyer.getAlamatKirim());
+    System.out.println("Penjual     : " + seller.getNama());
+    System.out.println("Toko        : " + seller.getNamaToko());
+    System.out.println("Pembayaran  : " + metodePembayaran);
+    System.out.println("----------------------------------------");
 
     for (int i = 0; i < listProduk.size(); i++) {
       Produk produk = listProduk.get(i);
       int kuantitas = listKuantitas.get(i);
       float subtotal = produk.getHarga() * kuantitas;
+      totalKuantitas = totalKuantitas + kuantitas;
 
-      System.out.printf("%-4d %-22s %-13s Rp%9.0f %5d Rp%9.0f%n",
-                        i + 1, produk.getNama(), produk.getUkuran(),
-                        produk.getHarga(), kuantitas, subtotal);
-      System.out.println("     " + produk.getInfo());
+      System.out.println((i + 1) + ". " + produk.getInfo());
+      System.out.println("   Harga    : Rp " + produk.getHarga());
+      System.out.println("   Jumlah   : " + kuantitas);
+      System.out.println("   Subtotal : Rp " + subtotal);
     }
 
-    System.out.println("------------------------------------------------------------------------------");
-    System.out.printf("%-51s Rp%9.0f%n", "Subtotal Pesanan", totalHarga);
-    System.out.println("Total Kuantitas     : " + totalKuantitas + " produk");
-    System.out.println("------------------------------------------------------------------------------");
-    System.out.printf("%-51s Rp%9.0f%n", "TOTAL PEMBAYARAN", totalHarga);
-    System.out.println("==============================================================================");
-    System.out.println("Terima kasih telah berbelanja di " + seller.getNamaToko());
-    System.out.println("Simpan nota ini sebagai bukti pembayaran.");
-    System.out.println("                              End of receipt");
-    System.out.println("==============================================================================");
+    System.out.println("----------------------------------------");
+    System.out.println("Total Produk : " + totalKuantitas);
+    System.out.println("Total Bayar  : Rp " + totalHarga);
+    System.out.println("========================================");
+    System.out.println("Terima kasih telah berbelanja!");
   }
 }

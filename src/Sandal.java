@@ -1,7 +1,7 @@
 public class Sandal extends AlasKaki{
   private String jenisSandal;
 
-  public Sandal(String kode, String nama, int ukuran, float harga, int stok, String merk, String jenisSandal) {
+  public Sandal(String kode, String nama, String ukuran, float harga, int stok, String merk, String jenisSandal) {
     super(kode, nama, ukuran, harga, stok, merk);
     this.jenisSandal = jenisSandal;
   }
