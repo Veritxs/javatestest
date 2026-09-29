@@ -4,6 +4,7 @@ public class Penjualan implements Cetak{
   private String idPenjualan;
   private String tglPenjualan;
   private ArrayList<Produk> listProduk;
+  private ArrayList<Integer> listKuantitas;
   private Seller seller;
   private Buyer buyer;
   private String metodePembayaran;
@@ -18,23 +19,43 @@ public class Penjualan implements Cetak{
     this.buyer = buyer;
     this.metodePembayaran = metodePembayaran;
     listProduk = new ArrayList<>();
+    listKuantitas = new ArrayList<>();
     totalHarga = 0;
   }
 
   //method penjualan
   public void tambahProduk(Produk produk) {
-    if (produk.getStok() > 0) {
-      listProduk.add(produk);
-      produk.setStok(produk.getStok() - 1);
+    tambahProduk(produk, 1);
+  }
+
+  public void tambahProduk(Produk produk, int jumlah) {
+    if (jumlah <= 0) {
+      System.out.println("Jumlah produk harus lebih dari 0.");
+    } else if (jumlah <= produk.getStok()) {
+      int posisiProduk = listProduk.indexOf(produk);
+
+      if (posisiProduk == -1) {
+        listProduk.add(produk);
+        listKuantitas.add(jumlah);
+      } else {
+        int jumlahLama = listKuantitas.get(posisiProduk);
+        listKuantitas.set(posisiProduk, jumlahLama + jumlah);
+      }
+
+      produk.setStok(produk.getStok() - jumlah);
       hitungTotalHarga();
+      System.out.println(jumlah + " " + produk.getNama() + " ditambahkan ke pesanan.");
     } else {
-      System.out.println("Stok " + produk.getNama() + " habis!");
+      System.out.println("Stok " + produk.getNama() + " tidak cukup.");
     }
   }
+
   public float hitungTotalHarga() {
     totalHarga = 0;
-    for (Produk produk : listProduk) {
-      totalHarga = totalHarga + produk.getHarga();
+    for (int i = 0; i < listProduk.size(); i++) {
+      Produk produk = listProduk.get(i);
+      int kuantitas = listKuantitas.get(i);
+      totalHarga = totalHarga + (produk.getHarga() * kuantitas);
     }
     return totalHarga;
   }
@@ -64,6 +85,9 @@ public class Penjualan implements Cetak{
   public ArrayList<Produk> getListProduk() {
     return listProduk;
   }
+  public ArrayList<Integer> getListKuantitas() {
+    return listKuantitas;
+  }
   public Seller getSeller() {
     return seller;
   }
@@ -80,7 +104,11 @@ public class Penjualan implements Cetak{
   //implementasi interface Cetak
   public void cetakStruk() {
     hitungTotalHarga();
-    int totalKuantitas = listProduk.size();
+    int totalKuantitas = 0;
+
+    for (int i = 0; i < listKuantitas.size(); i++) {
+      totalKuantitas = totalKuantitas + listKuantitas.get(i);
+    }
 
     System.out.println("\n==============================================================================");
     System.out.println("                               S H O P E E");
@@ -109,7 +137,7 @@ public class Penjualan implements Cetak{
 
     for (int i = 0; i < listProduk.size(); i++) {
       Produk produk = listProduk.get(i);
-      int kuantitas = 1;
+      int kuantitas = listKuantitas.get(i);
       float subtotal = produk.getHarga() * kuantitas;
 
       System.out.printf("%-4d %-22s %-13s Rp%9.0f %5d Rp%9.0f%n",

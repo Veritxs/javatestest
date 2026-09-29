@@ -7,62 +7,77 @@ public class App {
 
     System.out.println("Learning Inheritance and Polymorphism");
 
-    //Input data yang disediakan oleh Seller
+    //Input data Seller
     System.out.println("\n=== INPUT DATA SELLER ===");
-    System.out.print("Nama penjual  : ");
+    System.out.print("Nama penjual : ");
     String namaPenjual = input.nextLine();
-    System.out.print("Nama toko     : ");
+    System.out.print("Nama toko    : ");
     String namaToko = input.nextLine();
-    System.out.print("Alamat toko   : ");
+    System.out.print("Alamat toko  : ");
     String alamatToko = input.nextLine();
-
-    //Input data yang disediakan oleh Buyer
-    System.out.println("\n=== INPUT DATA BUYER ===");
-    System.out.print("Nama pembeli  : ");
-    String namaPembeli = input.nextLine();
-    System.out.print("No. handphone : ");
-    String noHpPembeli = input.nextLine();
-    System.out.print("Alamat kirim  : ");
-    String alamatKirim = input.nextLine();
-    System.out.print("Metode bayar  : ");
-    String metodePembayaran = input.nextLine();
-
-    //Object Seller dan Buyer dari hasil input
     Seller seller1 = new Seller(namaPenjual, namaToko, alamatToko);
-    Buyer buyer1 = new Buyer(namaPembeli, noHpPembeli, alamatKirim);
 
-    //Data produk dari Seller
-    KaosKaki produk1 = new KaosKaki("KK01", "Ankle Sock", "Uniqlo", 45000f, 10, "Polos");
-    Sandal produk2 = new Sandal("SD01", "Slide", "Adidas", 350000f, 5, 42, "Sandal Jepit");
-    Sepatu produk3 = new Sepatu("SP01", "Air Max", "Nike", 950000f, 3, 43, "Running");
+    //Seller membuat object KaosKaki menggunakan constructor
+    System.out.println("\n=== INPUT PRODUK 1: KAOS KAKI ===");
+    System.out.print("Kode produk  : ");
+    String kode1 = input.nextLine();
+    System.out.print("Nama produk  : ");
+    String nama1 = input.nextLine();
+    System.out.print("Merek        : ");
+    String merek1 = input.nextLine();
+    System.out.print("Harga        : ");
+    float harga1 = Float.parseFloat(input.nextLine());
+    System.out.print("Stok         : ");
+    int stok1 = Integer.parseInt(input.nextLine());
+    System.out.print("Motif        : ");
+    String motif1 = input.nextLine();
+    KaosKaki produk1 = new KaosKaki(kode1, nama1, merek1, harga1, stok1, motif1);
 
-    System.out.println("\nProduk 1: " + produk1.getNama() +
-                       ", Motif = " + produk1.getMotif());
-    System.out.println("Produk 2: " + produk2.getNama() +
-                       ", Ukuran = " + produk2.getUkuran() +
-                       ", Jenis = " + produk2.getJenisSandal());
-    System.out.println("Produk 3: " + produk3.getNama() +
-                       ", Ukuran = " + produk3.getUkuran() +
-                       ", Jenis = " + produk3.getJenisSepatu());
+    //Seller membuat object Sandal menggunakan constructor
+    System.out.println("\n=== INPUT PRODUK 2: SANDAL ===");
+    System.out.print("Kode produk  : ");
+    String kode2 = input.nextLine();
+    System.out.print("Nama produk  : ");
+    String nama2 = input.nextLine();
+    System.out.print("Merek        : ");
+    String merek2 = input.nextLine();
+    System.out.print("Harga        : ");
+    float harga2 = Float.parseFloat(input.nextLine());
+    System.out.print("Stok         : ");
+    int stok2 = Integer.parseInt(input.nextLine());
+    System.out.print("Ukuran       : ");
+    int ukuran2 = Integer.parseInt(input.nextLine());
+    System.out.print("Jenis sandal : ");
+    String jenis2 = input.nextLine();
+    Sandal produk2 = new Sandal(kode2, nama2, merek2, harga2, stok2, ukuran2, jenis2);
 
-    //Polymorphic variables
-    Produk produk4 = new KaosKaki("KK02", "Crew Sock", "Puma", 55000f, 8, "Garis");
-    Produk produk5 = new Sandal("SD02", "Classic Clog", "Crocs", 700000f, 4, 41, "Selop");
-    Produk produk6 = new Sepatu("SP02", "Chuck Taylor", "Converse", 850000f, 6, 40, "Sneakers");
+    //Seller membuat object Sepatu menggunakan constructor
+    System.out.println("\n=== INPUT PRODUK 3: SEPATU ===");
+    System.out.print("Kode produk  : ");
+    String kode3 = input.nextLine();
+    System.out.print("Nama produk  : ");
+    String nama3 = input.nextLine();
+    System.out.print("Merek        : ");
+    String merek3 = input.nextLine();
+    System.out.print("Harga        : ");
+    float harga3 = Float.parseFloat(input.nextLine());
+    System.out.print("Stok         : ");
+    int stok3 = Integer.parseInt(input.nextLine());
+    System.out.print("Ukuran       : ");
+    int ukuran3 = Integer.parseInt(input.nextLine());
+    System.out.print("Jenis sepatu : ");
+    String jenis3 = input.nextLine();
+    Sepatu produk3 = new Sepatu(kode3, nama3, merek3, harga3, stok3, ukuran3, jenis3);
 
-    //ArrayList
+    //Polymorphism: object berbeda disimpan dalam ArrayList Produk
     ArrayList<Produk> produkList = new ArrayList<>();
     produkList.add(produk1);
     produkList.add(produk2);
     produkList.add(produk3);
-    produkList.add(produk4);
-    produkList.add(produk5);
-    produkList.add(produk6);
 
-    //Display all objects
-    System.out.println("\nSEMUA PRODUK:");
+    System.out.println("\n=== PRODUK DARI SELLER ===");
     for (Produk produkObj : produkList) {
-      System.out.println("Produk : " + produkObj.getNama() +
+      System.out.println(produkObj.getInfo() +
                          " ==> class = " + produkObj.getClass());
 
       if (produkObj instanceof KaosKaki) {
@@ -76,15 +91,49 @@ public class App {
       }
     }
 
+    //Input data Buyer
+    System.out.println("\n=== INPUT DATA BUYER ===");
+    System.out.print("Nama pembeli  : ");
+    String namaPembeli = input.nextLine();
+    System.out.print("No. handphone : ");
+    String noHpPembeli = input.nextLine();
+    System.out.print("Alamat kirim  : ");
+    String alamatKirim = input.nextLine();
+    System.out.print("Metode bayar  : ");
+    String metodePembayaran = input.nextLine();
+    Buyer buyer1 = new Buyer(namaPembeli, noHpPembeli, alamatKirim);
+
     seller1.login();
     buyer1.login();
 
     //Nomor pesanan dan tanggal dibuat oleh sistem
     Penjualan jual1 = new Penjualan("TRX001", "29-09-2026", seller1, buyer1,
                                      metodePembayaran);
-    jual1.tambahProduk(produk1);
-    jual1.tambahProduk(produk2);
-    jual1.tambahProduk(produk3);
+
+    //Menu Buyer untuk memilih produk dan jumlah
+    int pilihan = -1;
+    while (pilihan != 0) {
+      System.out.println("\n=== MENU PRODUK ===");
+      for (int i = 0; i < produkList.size(); i++) {
+        Produk produk = produkList.get(i);
+        System.out.println((i + 1) + ". " + produk.getNama() +
+                           " | Rp " + produk.getHarga() +
+                           " | Stok: " + produk.getStok());
+      }
+      System.out.println("0. Selesai dan cetak struk");
+      System.out.print("Pilih produk : ");
+      pilihan = Integer.parseInt(input.nextLine());
+
+      if (pilihan > 0 && pilihan <= produkList.size()) {
+        Produk produkDipilih = produkList.get(pilihan - 1);
+        System.out.print("Jumlah       : ");
+        int jumlah = Integer.parseInt(input.nextLine());
+        jual1.tambahProduk(produkDipilih, jumlah);
+      } else if (pilihan != 0) {
+        System.out.println("Pilihan produk tidak tersedia.");
+      }
+    }
+
     jual1.cetakStruk();
 
     buyer1.logout();
