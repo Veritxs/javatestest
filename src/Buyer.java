@@ -10,6 +10,13 @@ public class Buyer extends Person implements Login{
     this.saldo = saldo;
   }
 
+  //Constructor sederhana untuk data struk
+  public Buyer(String nama, String noHp, String alamatKirim) {
+    super("", nama, noHp, "", "");
+    this.alamatKirim = alamatKirim;
+    saldo = 0;
+  }
+
   //setter and getter
   public void setAlamatKirim(String alamatKirim) {
     this.alamatKirim = alamatKirim;

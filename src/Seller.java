@@ -12,6 +12,14 @@ public class Seller extends Person implements Login{
     this.rating = rating;
   }
 
+  //Constructor sederhana untuk data struk
+  public Seller(String nama, String namaToko, String alamatToko) {
+    super("", nama, "", "", "");
+    this.namaToko = namaToko;
+    this.alamatToko = alamatToko;
+    rating = 0;
+  }
+
   //setter and getter
   public void setNamaToko(String namaToko) {
     this.namaToko = namaToko;
