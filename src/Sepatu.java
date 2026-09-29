@@ -14,7 +14,6 @@ public class Sepatu extends AlasKaki{
   }
 
   public String getInfo() {
-    return "Sepatu " + getNama() + " (" + getMerek() + "), Ukuran = " + getUkuran() +
-           ", Jenis = " + jenisSepatu;
+    return "Sepatu " + getNama() + " (" + getMerek() + "), Ukuran = " + getUkuran() + ", Jenis = " + jenisSepatu;
   }
 }
