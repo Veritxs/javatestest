@@ -4,8 +4,7 @@ public class Seller extends Person implements Login{
   private float rating;
 
   //Constructor
-  public Seller(String email, String nama, String noHp, String username, String password,
-                String namaToko, String alamatToko, float rating) {
+  public Seller(String email, String nama, String noHp, String username, String password, String namaToko, String alamatToko, float rating) {
     super(email, nama, noHp, username, password);
     this.namaToko = namaToko;
     this.alamatToko = alamatToko;

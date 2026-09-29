@@ -11,8 +11,7 @@ public class Penjualan implements Cetak{
   private float totalHarga;
 
   //Constructor
-  public Penjualan(String idPenjualan, String tglPenjualan, Seller seller,
-                   Buyer buyer, String metodePembayaran) {
+  public Penjualan(String idPenjualan, String tglPenjualan, Seller seller, Buyer buyer, String metodePembayaran) {
     this.idPenjualan = idPenjualan;
     this.tglPenjualan = tglPenjualan;
     this.seller = seller;
