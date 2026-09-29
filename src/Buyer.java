@@ -1,20 +1,13 @@
-package com.penjualan;
-
 public class Buyer extends Person implements Login{
   private String alamatKirim;
   private float saldo;
 
   //Constructor
   public Buyer(String email, String nama, String noHp, String username, String password,
-               String alamat, float s) {
+               String alamatKirim, float saldo) {
     super(email, nama, noHp, username, password);
-    alamatKirim = alamat;
-    saldo = s;
-  }
-  public Buyer() {
-    super();
-    alamatKirim = "";
-    saldo = 0;
+    this.alamatKirim = alamatKirim;
+    this.saldo = saldo;
   }
 
   //setter and getter

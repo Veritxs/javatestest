@@ -1,5 +1,3 @@
-package com.penjualan;
-
 /*
  * Interface Login untuk proses masuk dan keluar
  * dari setiap user (Buyer dan Seller)

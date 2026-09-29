@@ -1,5 +1,3 @@
-package com.penjualan;
-
 public class Seller extends Person implements Login{
   private String namaToko;
   private String alamatToko;
@@ -7,17 +5,11 @@ public class Seller extends Person implements Login{
 
   //Constructor
   public Seller(String email, String nama, String noHp, String username, String password,
-                String toko, String alamat, float r) {
+                String namaToko, String alamatToko, float rating) {
     super(email, nama, noHp, username, password);
-    namaToko = toko;
-    alamatToko = alamat;
-    rating = r;
-  }
-  public Seller() {
-    super();
-    namaToko = "";
-    alamatToko = "";
-    rating = 0;
+    this.namaToko = namaToko;
+    this.alamatToko = alamatToko;
+    this.rating = rating;
   }
 
   //setter and getter

@@ -1,5 +1,3 @@
-package com.penjualan;
-
 public abstract class Produk {
   private String kode;
   private String nama;
@@ -14,13 +12,6 @@ public abstract class Produk {
     this.merek = merek;
     this.harga = harga;
     this.stok = stok;
-  }
-  public Produk() {
-    kode = "";
-    nama = "";
-    merek = "";
-    harga = 0;
-    stok = 0;
   }
 
   //setter and getter

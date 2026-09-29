@@ -1,5 +1,3 @@
-package com.penjualan;
-
 import java.util.ArrayList;
 
 public class Penjualan implements Cetak{
@@ -12,22 +10,14 @@ public class Penjualan implements Cetak{
   private float totalHarga;
 
   //Constructor
-  public Penjualan(String id, String tgl, Seller seller, Buyer buyer, String metode) {
-    idPenjualan = id;
-    tglPenjualan = tgl;
+  public Penjualan(String idPenjualan, String tglPenjualan, Seller seller,
+                   Buyer buyer, String metodePembayaran) {
+    this.idPenjualan = idPenjualan;
+    this.tglPenjualan = tglPenjualan;
     this.seller = seller;
     this.buyer = buyer;
-    metodePembayaran = metode;
-    listProduk = new ArrayList<Produk>();
-    totalHarga = 0;
-  }
-  public Penjualan() {
-    idPenjualan = "";
-    tglPenjualan = "";
-    seller = null;
-    buyer = null;
-    metodePembayaran = "";
-    listProduk = new ArrayList<Produk>();
+    this.metodePembayaran = metodePembayaran;
+    listProduk = new ArrayList<>();
     totalHarga = 0;
   }
 
@@ -43,8 +33,7 @@ public class Penjualan implements Cetak{
   }
   public float hitungTotalHarga() {
     totalHarga = 0;
-    for (int i = 0; i < listProduk.size(); i++) {
-      Produk produk = listProduk.get(i);
+    for (Produk produk : listProduk) {
       totalHarga = totalHarga + produk.getHarga();
     }
     return totalHarga;
@@ -99,8 +88,7 @@ public class Penjualan implements Cetak{
     System.out.println("Buyer        : " + buyer.getNama());
     System.out.println("Alamat Kirim : " + buyer.getAlamatKirim());
     System.out.println("----------------------------------------");
-    for (int i = 0; i < listProduk.size(); i++) {
-      Produk produk = listProduk.get(i);
+    for (Produk produk : listProduk) {
       System.out.println(produk.getKode() + " - " + produk.getInfo());
       System.out.println("   Rp " + produk.getHarga());
     }
