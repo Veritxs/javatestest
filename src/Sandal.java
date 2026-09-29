@@ -1,8 +1,8 @@
 public class Sandal extends AlasKaki{
   private String jenisSandal;
 
-  public Sandal(String kode, String nama, String ukuran, float harga, int stok, String merk, String jenisSandal) {
-    super(kode, nama, ukuran, harga, stok, merk);
+  public Sandal(String kode, String nama, String ukuran, String warna, float harga, int stok, String merk, String jenisSandal) {
+    super(kode, nama, ukuran, warna, harga, stok, merk);
     this.jenisSandal = jenisSandal;
   }
 
@@ -14,6 +14,6 @@ public class Sandal extends AlasKaki{
   }
 
   public String getInfo() {
-    return "Sandal " + getNama() + " (" + getMerk() + "), Ukuran = " + getUkuran() + ", Jenis = " + jenisSandal;
+    return "Sandal " + getNama() + " (" + getMerk() + "), Ukuran = " + getUkuran() + ", Warna = " + getWarna() + ", Jenis = " + jenisSandal;
   }
 }

@@ -1,22 +1,22 @@
 import java.util.ArrayList;
 
 public class Penjualan implements Cetak{
-  private String idPenjualan;
-  private String tglPenjualan;
+  private String penjualanID;
+  private String waktuPenjualan;
   private ArrayList<Produk> listProduk;
   private ArrayList<Integer> listKuantitas;
   private Seller seller;
   private Buyer buyer;
-  private String metodePembayaran;
+  private String metodePengiriman;
   private float totalHarga;
 
   //Constructor
-  public Penjualan(String idPenjualan, String tglPenjualan, Seller seller, Buyer buyer, String metodePembayaran) {
-    this.idPenjualan = idPenjualan;
-    this.tglPenjualan = tglPenjualan;
+  public Penjualan(String penjualanID, String waktuPenjualan, Seller seller, Buyer buyer, String metodePengiriman) {
+    this.penjualanID = penjualanID;
+    this.waktuPenjualan = waktuPenjualan;
     this.seller = seller;
     this.buyer = buyer;
-    this.metodePembayaran = metodePembayaran;
+    this.metodePengiriman = metodePengiriman;
     listProduk = new ArrayList<>();
     listKuantitas = new ArrayList<>();
     totalHarga = 0;
@@ -60,11 +60,11 @@ public class Penjualan implements Cetak{
   }
 
   //setter and getter
-  public void setIdPenjualan(String idPenjualan) {
-    this.idPenjualan = idPenjualan;
+  public void setPenjualanID(String penjualanID) {
+    this.penjualanID = penjualanID;
   }
-  public void setTglPenjualan(String tglPenjualan) {
-    this.tglPenjualan = tglPenjualan;
+  public void setWaktuPenjualan(String waktuPenjualan) {
+    this.waktuPenjualan = waktuPenjualan;
   }
   public void setSeller(Seller seller) {
     this.seller = seller;
@@ -72,14 +72,14 @@ public class Penjualan implements Cetak{
   public void setBuyer(Buyer buyer) {
     this.buyer = buyer;
   }
-  public void setMetodePembayaran(String metodePembayaran) {
-    this.metodePembayaran = metodePembayaran;
+  public void setMetodePengiriman(String metodePengiriman) {
+    this.metodePengiriman = metodePengiriman;
   }
-  public String getIdPenjualan() {
-    return idPenjualan;
+  public String getPenjualanID() {
+    return penjualanID;
   }
-  public String getTglPenjualan() {
-    return tglPenjualan;
+  public String getWaktuPenjualan() {
+    return waktuPenjualan;
   }
   public ArrayList<Produk> getListProduk() {
     return listProduk;
@@ -93,8 +93,8 @@ public class Penjualan implements Cetak{
   public Buyer getBuyer() {
     return buyer;
   }
-  public String getMetodePembayaran() {
-    return metodePembayaran;
+  public String getMetodePengiriman() {
+    return metodePengiriman;
   }
   public float getTotalHarga() {
     return totalHarga;
@@ -108,14 +108,14 @@ public class Penjualan implements Cetak{
     System.out.println("\n========================================");
     System.out.println("             STRUK SHOPEE");
     System.out.println("========================================");
-    System.out.println("No. Pesanan : " + idPenjualan);
-    System.out.println("Tanggal     : " + tglPenjualan);
+    System.out.println("No. Pesanan : " + penjualanID);
+    System.out.println("Waktu       : " + waktuPenjualan);
     System.out.println("Pembeli     : " + buyer.getNama());
     System.out.println("No. HP      : " + buyer.getNoHp());
-    System.out.println("Alamat      : " + buyer.getAlamatKirim());
+    System.out.println("Alamat      : " + buyer.getAlamatPribadi());
     System.out.println("Penjual     : " + seller.getNama());
     System.out.println("Toko        : " + seller.getNamaToko());
-    System.out.println("Pembayaran  : " + metodePembayaran);
+    System.out.println("Pengiriman  : " + metodePengiriman);
     System.out.println("----------------------------------------");
 
     for (int i = 0; i < listProduk.size(); i++) {

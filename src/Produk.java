@@ -2,14 +2,16 @@ public abstract class Produk {
   private String kode;
   private String nama;
   private String ukuran;
+  private String warna;
   private float harga;
   private int stok;
 
   //Constructor
-  public Produk(String kode, String nama, String ukuran, float harga, int stok) {
+  public Produk(String kode, String nama, String ukuran, String warna, float harga, int stok) {
     this.kode = kode;
     this.nama = nama;
     this.ukuran = ukuran;
+    this.warna = warna;
     this.harga = harga;
     this.stok = stok;
   }
@@ -23,6 +25,9 @@ public abstract class Produk {
   }
   public void setUkuran(String ukuran) {
     this.ukuran = ukuran;
+  }
+  public void setWarna(String warna) {
+    this.warna = warna;
   }
   public void setHarga(float harga) {
     this.harga = harga;
@@ -38,6 +43,9 @@ public abstract class Produk {
   }
   public String getUkuran() {
     return ukuran;
+  }
+  public String getWarna() {
+    return warna;
   }
   public float getHarga() {
     return harga;
