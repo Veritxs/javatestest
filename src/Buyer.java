@@ -3,8 +3,7 @@ public class Buyer extends Person implements Login{
   private float saldo;
 
   //Constructor
-  public Buyer(String email, String nama, String noHp, String username, String password,
-               String alamatKirim, float saldo) {
+  public Buyer(String email, String nama, String noHp, String username, String password, String alamatKirim, float saldo) {
     super(email, nama, noHp, username, password);
     this.alamatKirim = alamatKirim;
     this.saldo = saldo;
