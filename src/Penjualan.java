@@ -131,7 +131,7 @@ public class Penjualan implements Cetak{
     System.out.println("------------------------------------------------------------------------------");
     System.out.println("RINCIAN PESANAN");
     System.out.printf("%-4s %-22s %-13s %12s %5s %12s%n",
-                      "No", "Produk", "Merek", "Harga", "Qty", "Subtotal");
+                      "No", "Produk", "Ukuran", "Harga", "Qty", "Subtotal");
     System.out.println("------------------------------------------------------------------------------");
 
     for (int i = 0; i < listProduk.size(); i++) {
@@ -140,7 +140,7 @@ public class Penjualan implements Cetak{
       float subtotal = produk.getHarga() * kuantitas;
 
       System.out.printf("%-4d %-22s %-13s Rp%9.0f %5d Rp%9.0f%n",
-                        i + 1, produk.getNama(), produk.getMerek(),
+                        i + 1, produk.getNama(), produk.getUkuran(),
                         produk.getHarga(), kuantitas, subtotal);
       System.out.println("     " + produk.getInfo());
     }

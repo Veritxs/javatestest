@@ -34,15 +34,15 @@ public class App {
         String kode = input.nextLine();
         System.out.print("Nama produk  : ");
         String nama = input.nextLine();
-        System.out.print("Merek        : ");
-        String merek = input.nextLine();
+        System.out.print("Ukuran       : ");
+        int ukuran = Integer.parseInt(input.nextLine());
         System.out.print("Harga        : ");
         float harga = Float.parseFloat(input.nextLine());
         System.out.print("Stok         : ");
         int stok = Integer.parseInt(input.nextLine());
         System.out.print("Motif        : ");
         String motif = input.nextLine();
-        KaosKaki produk = new KaosKaki(kode, nama, merek, harga, stok, motif);
+        KaosKaki produk = new KaosKaki(kode, nama, ukuran, harga, stok, motif);
         produkList.add(produk);
         System.out.println(nama + " berhasil dimasukkan.");
       } else if (pilihanSeller == 2) {
@@ -51,8 +51,8 @@ public class App {
         String kode = input.nextLine();
         System.out.print("Nama produk  : ");
         String nama = input.nextLine();
-        System.out.print("Merek        : ");
-        String merek = input.nextLine();
+        System.out.print("Merk         : ");
+        String merk = input.nextLine();
         System.out.print("Harga        : ");
         float harga = Float.parseFloat(input.nextLine());
         System.out.print("Stok         : ");
@@ -61,7 +61,7 @@ public class App {
         int ukuran = Integer.parseInt(input.nextLine());
         System.out.print("Jenis sandal : ");
         String jenisSandal = input.nextLine();
-        Sandal produk = new Sandal(kode, nama, merek, harga, stok, ukuran, jenisSandal);
+        Sandal produk = new Sandal(kode, nama, ukuran, harga, stok, merk, jenisSandal);
         produkList.add(produk);
         System.out.println(nama + " berhasil dimasukkan.");
       } else if (pilihanSeller == 3) {
@@ -70,8 +70,8 @@ public class App {
         String kode = input.nextLine();
         System.out.print("Nama produk  : ");
         String nama = input.nextLine();
-        System.out.print("Merek        : ");
-        String merek = input.nextLine();
+        System.out.print("Merk         : ");
+        String merk = input.nextLine();
         System.out.print("Harga        : ");
         float harga = Float.parseFloat(input.nextLine());
         System.out.print("Stok         : ");
@@ -80,7 +80,7 @@ public class App {
         int ukuran = Integer.parseInt(input.nextLine());
         System.out.print("Jenis sepatu : ");
         String jenisSepatu = input.nextLine();
-        Sepatu produk = new Sepatu(kode, nama, merek, harga, stok, ukuran, jenisSepatu);
+        Sepatu produk = new Sepatu(kode, nama, ukuran, harga, stok, merk, jenisSepatu);
         produkList.add(produk);
         System.out.println(nama + " berhasil dimasukkan.");
       } else if (pilihanSeller != 0) {
@@ -105,9 +105,6 @@ public class App {
     System.out.print("Metode bayar  : ");
     String metodePembayaran = input.nextLine();
     Buyer buyer1 = new Buyer(namaPembeli, noHpPembeli, alamatKirim);
-
-    seller1.login();
-    buyer1.login();
 
     //Nomor pesanan dan tanggal dibuat oleh sistem
     Penjualan jual1 = new Penjualan("TRX001", "29-09-2026", seller1, buyer1, metodePembayaran);
@@ -135,8 +132,6 @@ public class App {
     }
 
     jual1.cetakStruk();
-    buyer1.logout();
-    seller1.logout();
     input.close();
   }
 }
