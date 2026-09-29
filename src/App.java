@@ -106,9 +106,6 @@ public class App {
     String metodePembayaran = input.nextLine();
     Buyer buyer1 = new Buyer(namaPembeli, noHpPembeli, alamatKirim);
 
-    seller1.login();
-    buyer1.login();
-
     //Nomor pesanan dan tanggal dibuat oleh sistem
     Penjualan jual1 = new Penjualan("TRX001", "29-09-2026", seller1, buyer1, metodePembayaran);
 
@@ -135,8 +132,6 @@ public class App {
     }
 
     jual1.cetakStruk();
-    buyer1.logout();
-    seller1.logout();
     input.close();
   }
 }
