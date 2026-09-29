@@ -91,14 +91,7 @@ public class App {
     //Polymorphism: semua child class disimpan sebagai Produk
     System.out.println("\n=== PRODUK DARI SELLER ===");
     for (Produk produkObj : produkList) {
-      System.out.println(produkObj.getInfo() + " ==> class = " + produkObj.getClass());
-      if (produkObj instanceof KaosKaki) {
-        System.out.println("   Motif = " + ((KaosKaki) produkObj).getMotif());
-      } else if (produkObj instanceof Sandal) {
-        System.out.println("   Ukuran = " + ((Sandal) produkObj).getUkuran() + ", Jenis = " + ((Sandal) produkObj).getJenisSandal());
-      } else if (produkObj instanceof Sepatu) {
-        System.out.println("   Ukuran = " + ((Sepatu) produkObj).getUkuran() + ", Jenis = " + ((Sepatu) produkObj).getJenisSepatu());
-      }
+      System.out.println(produkObj.getInfo());
     }
 
     //Input data Buyer

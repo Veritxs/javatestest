@@ -1,4 +1,4 @@
-public class AlasKaki extends Produk{
+public abstract class AlasKaki extends Produk{
   private int ukuran;
 
   public AlasKaki(String kode, String nama, String merek, float harga, int stok, int ukuran) {
@@ -11,9 +11,5 @@ public class AlasKaki extends Produk{
   }
   public int getUkuran() {
     return ukuran;
-  }
-
-  public String getInfo() {
-    return "Alas Kaki " + getNama() + " (" + getMerek() + "), Ukuran = " + ukuran;
   }
 }

@@ -14,7 +14,6 @@ public class Sandal extends AlasKaki{
   }
 
   public String getInfo() {
-    return "Sandal " + getNama() + " (" + getMerek() + "), Ukuran = " + getUkuran() +
-           ", Jenis = " + jenisSandal;
+    return "Sandal " + getNama() + " (" + getMerek() + "), Ukuran = " + getUkuran() + ", Jenis = " + jenisSandal;
   }
 }
