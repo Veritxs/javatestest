@@ -1,5 +1,3 @@
-package com.penjualan;
-
 public abstract class Person {
   private String email;
   private String nama;
@@ -14,13 +12,6 @@ public abstract class Person {
     this.noHp = noHp;
     this.username = username;
     this.password = password;
-  }
-  public Person() {
-    email = "";
-    nama = "";
-    noHp = "";
-    username = "";
-    password = "";
   }
 
   //setter and getter
